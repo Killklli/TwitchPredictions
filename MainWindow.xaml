@@ -1,0 +1,61 @@
+﻿<mah:MetroWindow x:Class="IronmonPredictions.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:IronmonPredictions"
+        mc:Ignorable="d"
+        Title="Twitch Predictions" Height="450" Width="592" Closing="Window_Closing">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="225*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AuthButton" Content="Authenticate" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="114" Click="Authenticate" Height="25"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="28*"/>
+                <RowDefinition Height="105*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="109*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="108*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Option1Title" Foreground="#1e69ff" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="15" Content="None" RenderTransformOrigin="0.302,0.266" Grid.ColumnSpan="3" Margin="0,27,107,0" Grid.RowSpan="2"/>
+            <Label x:Name="Option2Title" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="15" Content="None" Grid.Column="2" Foreground="#e0008e" Grid.ColumnSpan="2" Margin="0,27,0,0" Grid.RowSpan="2"/>
+            <Label x:Name="Option1Percent"   Foreground="#1e69ff" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Content="0%" Margin="0,30,107,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Label x:Name="Option2Percent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Content="0%" Grid.Column="2" Margin="0,30,0,0" RenderTransformOrigin="1.107,0.52" Grid.Row="1" Grid.RowSpan="2" Foreground="#e0008e"/>
+            <Label Content="Points" Foreground="#1e69ff" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label Content="Points" HorizontalAlignment="Left" Margin="49,8,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"  Foreground="#e0008e"/>
+            <Label Content="Entrants" Foreground="#1e69ff" HorizontalAlignment="Left" Margin="-1,35,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label Content="Entrants" HorizontalAlignment="Left" Margin="49,34,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"  Foreground="#e0008e"/>
+            <Label x:Name="BluePoints" Content="0" HorizontalAlignment="Left" Margin="60,9,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label x:Name="BlueEntrants" Content="0" HorizontalAlignment="Left" Margin="60,35,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Label x:Name="PinkPoints" Content="0" HorizontalAlignment="Left" Margin="27,8,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"/>
+            <Label x:Name="PinkEntrants" Content="0" HorizontalAlignment="Left" Margin="27,34,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="3"/>
+        </Grid>
+        <Label x:Name="CurrentPredictionTitle" HorizontalContentAlignment="Center" FontSize="15" Content="None" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,1,0,0" Height="30" Width="450"/>
+        <Button x:Name="ClosePredButton" IsEnabled="False" Content="Close Prediction" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ClosePrediction" Height="25" Width="114" Margin="0,19,0,0" Grid.Row="1"/>
+        <Button x:Name="CancelPredButton" IsEnabled="False" Content="Cancel Prediction" HorizontalAlignment="Center" VerticalAlignment="Top" Click="CancelPrediction" Height="26" Width="114" Margin="0,49,0,0" Grid.Row="1"/>
+        <ListView IsEnabled="False" x:Name="Titles" Grid.Column="1" Grid.Row="1" MouseDoubleClick="ListView_MouseDoubleClick" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="BlueWins"  Background="#1e69ff" IsEnabled="False"  Content="Blue Wins" VerticalAlignment="Top" Click="BlueWin" Height="25" Margin="14,164,14,0" Grid.Row="1"/>
+        <Button x:Name="PinkWins" Background="#e0008e" IsEnabled="False"  Content="Pink Wins" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PinkWin" Height="25" Width="114" Margin="0,194,0,0" Grid.Row="1"/>
+        <Label x:Name="Timer" HorizontalContentAlignment="Center" FontSize="15" Content="00:00:00" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,133,0,0" Height="30" Width="450"/>
+
+    </Grid>
+</mah:MetroWindow>

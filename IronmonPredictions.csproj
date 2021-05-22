@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grapevine" Version="4.2.2" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="TwitchLib.Api" Version="3.2.4-preview-d093e175264edce7ccb64c37f7a334f375be79f3" />
+    <PackageReference Include="TwitchLib.Api.Helix" Version="3.2.4-preview-d093e175264edce7ccb64c37f7a334f375be79f3" />
+    <PackageReference Include="TwitchLib.Api.Helix.Models" Version="3.2.4-preview-d093e175264edce7ccb64c37f7a334f375be79f3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="predictions.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
